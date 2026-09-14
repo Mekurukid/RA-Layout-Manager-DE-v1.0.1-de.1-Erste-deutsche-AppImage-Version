@@ -269,20 +269,6 @@ Prüfe vor einer öffentlichen Weitergabe von modifizierten Binärdateien, ob di
 
 ---
 
-## Screenshots
-
-Später können Screenshots ergänzt werden:
-
-```markdown
-![Hauptfenster](screenshots/hauptfenster.png)
-
-![OBS Browserquelle](screenshots/obs-browserquelle.png)
-
-![Fokus Overlay](screenshots/fokus-overlay.png)
-```
-
----
-
 ## Download
 
 Die aktuelle AppImage findest du unter:
