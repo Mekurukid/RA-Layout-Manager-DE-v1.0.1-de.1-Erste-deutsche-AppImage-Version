@@ -80,13 +80,6 @@ Die Anwendung erzeugt Stream-Labels und Daten für verschiedene Anzeigen. Dazu g
 
 Der Ordner mit den Stream-Labels kann direkt über die Anwendung geöffnet und anschließend in OBS beispielsweise als Textquelle oder Teil eines Browser-/Overlay-Setups verwendet werden.
 
-## Screenshots
-
-Lege deine Screenshots im Ordner `screenshots/` ab und ersetze später diesen Abschnitt beispielsweise durch:
-
-```markdown
-![Hauptfenster](screenshots/main-window.png)
-```
 
 ## Bekannte Einschränkungen
 
