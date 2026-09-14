@@ -86,7 +86,6 @@ Lege deine Screenshots im Ordner `screenshots/` ab und ersetze später diesen Ab
 
 ```markdown
 ![Hauptfenster](screenshots/main-window.png)
-![Fokus-Overlay](screenshots/focus-overlay.png)
 ```
 
 ## Bekannte Einschränkungen
