@@ -1,132 +1,305 @@
 # RA Layout Manager DE
 
-**Inoffizielle deutsche Linux-AppImage des RetroAchievements Layout Managers.**
+Eine inoffizielle deutsche Linux-AppImage des **RetroAchievements Layout Managers** mit vollständig übersetzter Benutzeroberfläche, automatischer Übersetzung von Erfolgen und direkten lokalen OBS-Browserquellen.
 
-Diese Variante richtet sich an deutschsprachige RetroAchievements-Nutzer unter Linux und bietet eine weitgehend deutsch übersetzte Benutzeroberfläche sowie eine automatische deutsche Übersetzung von Achievement-Titeln und -Beschreibungen.
+> **Aktuelle Version:** `v1.0.2-de.1`
 
-> **Hinweis:** Dieses Projekt ist eine inoffizielle Community-Anpassung. Es ist weder ein offizielles Projekt von RetroAchievements noch von Colossus-Gaming und wird von diesen nicht unterstützt oder bestätigt.
+---
 
-## Funktionen
+## Highlights
 
 - Deutsche Benutzeroberfläche
-- Deutsche Bezeichnungen in den Overlay-Fenstern
-- Automatische Übersetzung von Achievement-Titeln ins Deutsche
-- Automatische Übersetzung von Achievement-Beschreibungen ins Deutsche
-- Lokaler Übersetzungs-Cache, damit bereits übersetzte Achievements nicht ständig neu übersetzt werden müssen
-- Englischer Originaltext als Fallback, wenn der Übersetzungsdienst nicht erreichbar ist
-- Focus-/Fokus-Overlay
-- Achievement-Alerts
-- Letzte Erfolge
-- Erfolgsliste
-- Benutzerinformationen
-- Spielinformationen
-- Fortschrittsanzeige
-- Stream-Labels für OBS und andere Streaming-Software
-- Linux-AppImage für x86_64
+- Automatische Übersetzung von Achievement-Namen und -Beschreibungen
+- Linux-AppImage – keine klassische Installation notwendig
+- Optimiert für Nobara Linux und andere aktuelle Linux-Distributionen
+- Direkte OBS-Browserquellen als lokale HTML-Dateien
+- Kein Fenster- oder Bildschirm-Capture des Trackers mehr notwendig
+- Achievement- und Mastery-Benachrichtigungen direkt in OBS
+- Lokaler Übersetzungs-Cache
+- Englischer Originaltext als Fallback
+- Bestehende Overlay-Funktionen bleiben erhalten
 
-## Download
+---
 
-Die fertige AppImage wird über **GitHub Releases** bereitgestellt.
+## Neu in v1.0.2-de.1
 
-Empfohlener Dateiname:
+Mit Version `v1.0.2-de.1` wurden lokale OBS-Browserquellen ergänzt.
 
-```text
-RA-Layout-Manager-DE-v1.0.1-de.1-x86_64.AppImage
-```
+Die Overlays müssen dadurch nicht mehr als separates Tracker-Fenster geöffnet und anschließend über eine OBS-Fensteraufnahme aufgenommen werden.
 
-> Die AppImage sollte nicht direkt in das Git-Repository eingecheckt werden. Sie ist größer als das normale GitHub-Dateilimit und gehört als Release-Asset in einen GitHub Release.
+Der Tracker erzeugt automatisch lokale Browserdateien, die direkt in OBS als **Browserquelle → Lokale Datei** eingebunden werden können.
 
-## Installation unter Linux / Nobara
+### Verfügbare OBS-Browserquellen
 
-1. Lade die aktuelle `.AppImage` aus dem Bereich **Releases** herunter.
-2. Öffne ein Terminal im Download-Ordner.
-3. Mache die Datei ausführbar:
+- `Fokus.html`
+- `Meldungen.html`
+- `Erfolgsliste.html`
+- `Letzte-Erfolge.html`
+- `Benutzerinfo.html`
+- `Spielinfo.html`
+- `Spielfortschritt.html`
+- `Medien.html`
 
-```bash
-chmod +x RA-Layout-Manager-DE-v1.0.1-de.1-x86_64.AppImage
-```
+Zusätzlich werden die benötigten lokalen Daten und Assets automatisch erzeugt bzw. aktualisiert.
 
-4. Starte die Anwendung:
+---
 
-```bash
-./RA-Layout-Manager-DE-v1.0.1-de.1-x86_64.AppImage
-```
+## OBS-Browserquellen verwenden
 
-Alternativ kannst du die AppImage nach dem Setzen der Ausführungsrechte normalerweise auch per Doppelklick starten.
+1. Den RA Layout Manager DE starten.
+2. Im Tracker den Bereich **Dateien & Einstellungen** öffnen.
+3. Auf **OBS-Browserquellen öffnen** klicken.
+4. OBS öffnen.
+5. Eine neue Quelle hinzufügen:
+   - **Browser**
+   - **Lokale Datei** aktivieren
+6. Die gewünschte HTML-Datei auswählen, zum Beispiel:
+   - `Fokus.html`
+   - `Meldungen.html`
+7. Breite und Höhe einstellen.
+8. Fertig.
 
-## Einrichtung
+Das zugehörige Overlay-Fenster muss im Tracker nicht geöffnet sein.
 
-Für Live-Daten werden ein RetroAchievements-Benutzername und ein RetroAchievements Web API Key benötigt.
+---
 
-Den API-Key erhältst du in deinen RetroAchievements-Kontoeinstellungen.
+## Empfohlene OBS-Größen
 
-**Wichtig:** Behandle deinen API-Key wie ein Passwort. Poste weder den API-Key noch deine komplette `settings.json` in Issues, Screenshots oder öffentlichen Logs.
+| Browserquelle | Empfohlene Größe |
+|---|---:|
+| Fokus | 700 × 165 |
+| Meldungen | 1024 × 768 |
+| Benutzerinfo | 805 × 290 |
+| Spielinfo | 1190 × 645 |
+| Spielfortschritt | 805 × 350 |
+| Letzte Erfolge | 511 × 600 |
+| Erfolgsliste | 680 × 480 |
+| Medien | 640 × 480 |
+
+Die Größen sind Empfehlungen und können je nach OBS-Layout angepasst werden.
+
+---
 
 ## Automatische deutsche Achievement-Übersetzung
 
-Achievement-Titel und -Beschreibungen werden bei Bedarf automatisch von Englisch nach Deutsch übersetzt. Bereits übersetzte Inhalte werden lokal zwischengespeichert.
+Achievement-Titel und -Beschreibungen werden automatisch ins Deutsche übersetzt.
 
-Dabei gilt:
+Die übersetzten Texte werden unter anderem verwendet für:
 
-- Für die erste Übersetzung ist eine Internetverbindung erforderlich.
-- Die Übersetzung erfolgt maschinell und kann gelegentlich ungenau sein.
-- Wenn der Übersetzungsdienst nicht erreichbar ist, wird der englische Originaltext weiterverwendet.
-- Für die Übersetzung werden die jeweiligen Achievement-Texte an einen Google-Translate-Endpunkt (`translate.googleapis.com`) übertragen.
-- Der lokale Übersetzungs-Cache wird in den App-Daten gespeichert.
+- Fokus
+- Achievement-Liste
+- Letzte Erfolge
+- Achievement-Benachrichtigungen
+- Mastery-Benachrichtigungen
+- Stream-/OBS-Overlays
 
-## OBS / Streaming
+Übersetzungen werden lokal zwischengespeichert. Falls der Übersetzungsdienst vorübergehend nicht erreichbar ist, verwendet die App den englischen Originaltext als Fallback.
 
-Die Anwendung erzeugt Stream-Labels und Daten für verschiedene Anzeigen. Dazu gehören unter anderem Fokus-Achievement, Alerts, Benutzerinformationen, Spielinformationen und letzte Erfolge.
+---
 
-Der Ordner mit den Stream-Labels kann direkt über die Anwendung geöffnet und anschließend in OBS beispielsweise als Textquelle oder Teil eines Browser-/Overlay-Setups verwendet werden.
+## Installation unter Linux / Nobara
 
+Die Anwendung wird als AppImage bereitgestellt und benötigt keine klassische Installation.
 
-## Bekannte Einschränkungen
+### 1. AppImage herunterladen
 
-- Nur Linux x86_64 wird mit dieser AppImage bereitgestellt.
-- Maschinelle Übersetzungen sind nicht immer perfekt.
-- Die automatische Übersetzung ist von der Erreichbarkeit des externen Übersetzungsdienstes abhängig.
-- Änderungen an der RetroAchievements API oder an externen Diensten können einzelne Funktionen beeinflussen.
+Lade die aktuelle Datei aus dem Bereich **Releases** herunter:
 
-## Upstream und Credits
+```text
+RA-Layout-Manager-DE-v1.0.2-de.1-x86_64.AppImage
+```
 
-Diese Version basiert auf dem Projekt **RetroAchievements Layout Manager** von **Colossus-Gaming**:
+### 2. Ausführbar machen
 
-https://github.com/Colossus-Gaming/retroachievements-layout-manager
+```bash
+chmod +x RA-Layout-Manager-DE-v1.0.2-de.1-x86_64.AppImage
+```
 
-RetroAchievements:
+### 3. Starten
 
-https://retroachievements.org/
+```bash
+./RA-Layout-Manager-DE-v1.0.2-de.1-x86_64.AppImage
+```
 
-Vielen Dank an die ursprünglichen Entwickler und die RetroAchievements-Community.
+Unter vielen Desktop-Umgebungen kann die AppImage anschließend auch per Doppelklick gestartet werden.
 
-## Disclaimer / Haftungsausschluss
+---
 
-Dies ist eine **inoffizielle Community-Version**.
+## Nobara Linux
 
-- Keine Verbindung, Partnerschaft oder offizielle Unterstützung durch RetroAchievements oder Colossus-Gaming wird behauptet.
-- Namen, Marken, Logos und sonstige Rechte Dritter verbleiben bei den jeweiligen Rechteinhabern.
-- Die Software wird ohne Gewährleistung bereitgestellt. Die Nutzung erfolgt auf eigenes Risiko.
-- Der Autor dieser Anpassung übernimmt keine Haftung für Datenverlust, Ausfälle, fehlerhafte Übersetzungen oder Änderungen an externen Diensten/APIs.
-- Dieser Disclaimer erteilt **keine** zusätzlichen Rechte zur Nutzung oder Weiterverbreitung von Software oder Assets Dritter.
+Die AppImage wurde speziell mit Blick auf Nobara Linux erstellt und getestet.
 
-Weitere Hinweise stehen in [DISCLAIMER.md](DISCLAIMER.md) und [CREDITS.md](CREDITS.md).
+Falls sich AppImages bei dir nicht per Doppelklick starten lassen:
 
-## Lizenz- und Rechtehinweis
+1. Rechtsklick auf die AppImage
+2. **Eigenschaften**
+3. Datei als ausführbar markieren
 
-Für das gefundene Upstream-Repository ist keine eindeutige allgemeine Projektlizenz Bestandteil dieser Veröffentlichungsvorlage. Deshalb enthält dieses Repository bewusst **keine neu erfundene Lizenz**, die Rechte an fremdem Code oder fremden Assets versprechen würde.
+Alternativ:
 
-Bevor du veränderte Binärdateien öffentlich weiterverbreitest, solltest du sicherstellen, dass du dafür die erforderliche Erlaubnis bzw. Lizenz besitzt. Drittanbieter-Komponenten wie Electron/Chromium können eigene Lizenztexte enthalten, die zusätzlich gelten.
+```bash
+chmod +x RA-Layout-Manager-DE-v1.0.2-de.1-x86_64.AppImage
+```
+
+---
+
+## RetroAchievements
+
+Für die Verwendung der RetroAchievements-Funktionen werden deine eigenen RetroAchievements-Zugangsdaten bzw. API-Daten benötigt.
+
+Diese Daten gehören dir und sollten niemals öffentlich geteilt werden.
+
+> **Wichtig:** Veröffentliche niemals deinen RetroAchievements API-Key in GitHub Issues, Screenshots, Logs oder anderen öffentlichen Beiträgen.
+
+---
+
+## Datenschutz
+
+Die Anwendung verarbeitet die für die RetroAchievements-Funktionen benötigten Daten lokal bzw. über die dafür erforderlichen externen Dienste.
+
+Für die automatische Übersetzung können Achievement-Titel und -Beschreibungen an einen Übersetzungsdienst übertragen werden.
+
+Der RetroAchievements API-Key wird nicht in die lokalen OBS-Browserdateien geschrieben.
+
+---
+
+## Prüfsumme
+
+Für jeden Release sollte zusätzlich eine `SHA256SUMS.txt` bereitgestellt werden.
+
+Beispiel:
+
+```bash
+sha256sum RA-Layout-Manager-DE-v1.0.2-de.1-x86_64.AppImage
+```
+
+Vergleiche die Ausgabe anschließend mit der Prüfsumme im jeweiligen GitHub Release.
+
+---
+
+## Bekannte Hinweise
+
+- Die automatische Übersetzung benötigt für neue, noch nicht gecachte Texte eine Internetverbindung.
+- Die Qualität automatischer Übersetzungen kann je nach Achievement variieren.
+- Manche Eigennamen oder spielspezifischen Begriffe können im Original bleiben.
+- Die lokalen OBS-Browserdateien sollten nicht manuell verschoben oder umbenannt werden, wenn der Tracker sie weiterhin automatisch aktualisieren soll.
+- Nach einem größeren Update empfiehlt es sich, OBS-Browserquellen einmal neu zu laden.
+
+---
 
 ## Fehler melden
 
-Bitte nutze die GitHub-Issue-Vorlage und beschreibe:
+Wenn du einen Fehler findest, erstelle bitte ein GitHub Issue und gib möglichst folgende Informationen an:
 
-- Linux-Distribution und Version
-- Desktop-Umgebung (z. B. KDE Plasma oder GNOME)
-- App-Version
-- Was du erwartet hast
-- Was tatsächlich passiert ist
+- Version der App
+- Linux-Distribution
+- Desktop-Umgebung
+- OBS-Version, falls der Fehler ein Overlay betrifft
+- kurze Beschreibung des Problems
 - Schritte zum Reproduzieren
 
-**Niemals RetroAchievements API-Keys oder andere Zugangsdaten posten.**
+Screenshots sind ebenfalls hilfreich.
+
+**Bitte entferne vorher API-Keys, Tokens, Benutzerdaten und andere private Informationen.**
+
+---
+
+## Upstream / Credits
+
+Dieses Projekt basiert auf dem **RetroAchievements Layout Manager** von **Colossus-Gaming**.
+
+Upstream-Projekt:
+
+```text
+https://github.com/Colossus-Gaming/retroachievements-layout-manager
+```
+
+Vielen Dank an die ursprünglichen Entwickler und an die RetroAchievements-Community.
+
+RetroAchievements:
+
+```text
+https://retroachievements.org/
+```
+
+---
+
+## Disclaimer
+
+Dieses Projekt ist eine **inoffizielle deutsche Modifikation / Distribution**.
+
+Es besteht keine offizielle Verbindung zu RetroAchievements, Colossus-Gaming oder den Rechteinhabern der unterstützten Spiele und Marken.
+
+Alle genannten Produktnamen, Spiele, Marken, Logos und sonstigen Kennzeichen gehören ihren jeweiligen Rechteinhabern.
+
+Diese Version wird ohne Gewähr bereitgestellt. Die Nutzung erfolgt auf eigene Verantwortung.
+
+---
+
+## Lizenz- und Verbreitungshinweis
+
+Dieses Repository vergibt nicht automatisch neue Rechte an Bestandteilen des ursprünglichen Projekts oder an eingebundenen Drittanbieter-Komponenten.
+
+Für Bestandteile des Upstream-Projekts und für Drittanbieter-Abhängigkeiten gelten die jeweils zugehörigen Lizenz- und Nutzungsbedingungen.
+
+Prüfe vor einer öffentlichen Weitergabe von modifizierten Binärdateien, ob die erforderlichen Rechte und Bedingungen erfüllt sind.
+
+---
+
+## Versionen
+
+### v1.0.2-de.1
+
+- Lokale OBS-Browserquellen hinzugefügt
+- Alle wichtigen Overlay-Typen als lokale HTML-Dateien verfügbar
+- OBS kann die Overlays ohne Fensteraufnahme des Trackers anzeigen
+- Achievement- und Mastery-Meldungen direkt an die Browserquelle angebunden
+- Browserquellen werden automatisch im Benutzerordner erzeugt und aktualisiert
+- Deutsches Interface beibehalten
+- Automatische Achievement-Übersetzung beibehalten
+- API-Key wird nicht in die OBS-Browserdateien geschrieben
+
+### v1.0.1-de.1
+
+- Deutsche Benutzeroberfläche
+- Automatische Übersetzung von Achievement-Titeln
+- Automatische Übersetzung von Achievement-Beschreibungen
+- Deutscher Übersetzungs-Cache
+- Linux-/Nobara-AppImage
+
+---
+
+## Screenshots
+
+Später können Screenshots ergänzt werden:
+
+```markdown
+![Hauptfenster](screenshots/hauptfenster.png)
+
+![OBS Browserquelle](screenshots/obs-browserquelle.png)
+
+![Fokus Overlay](screenshots/fokus-overlay.png)
+```
+
+---
+
+## Download
+
+Die aktuelle AppImage findest du unter:
+
+**GitHub → Releases → Latest Release**
+
+Empfohlene Release-Dateien:
+
+```text
+RA-Layout-Manager-DE-v1.0.2-de.1-x86_64.AppImage
+SHA256SUMS-v1.0.2-de.1.txt
+```
+
+---
+
+## Support
+
+Wenn dir ein Fehler auffällt oder du eine Verbesserung vorschlagen möchtest, nutze bitte die **GitHub Issues** dieses Repositories.
+
+Feature-Wünsche für weitere Overlays, Übersetzungen oder OBS-Funktionen sind willkommen.
